@@ -25,7 +25,7 @@ plt.pie(valor_suscripciones, labels=perio_clean, autopct='%1.1f%%', startangle=1
 plt.title('Cuota de Mercado de Suscripciones en 2024 (en euros)')
 
 # Añadir el valor total de suscriptores en euros
-plt.annotate(f'Total valor suscripciones: €{total_valor_suscripciones:,.2f}', 
+plt.annotate(f'Total de suscripciones: €{total_valor_suscripciones:,.2f}', 
              xy=(0.5, 0.5), xytext=(0, 0.8),
              textcoords='axes fraction', ha='center', fontsize=12)
 
