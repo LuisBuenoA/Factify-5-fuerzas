@@ -16,12 +16,12 @@ fig, ax = plt.subplots(figsize=(12, 8))
 # Graficar el 'Coste por sus fuentes'
 ax.bar(df_proveedores['Medios proveedores de noticias'], df_proveedores['Coste por sus fuentes'], label='Coste por sus fuentes')
 
-# Graficar el 'Ahorro de costes por publicidad' con colores basados en el CTR
+# Graficar el 'Tráfico orgánico para el medio' con colores basados en el CTR
 for idx, row in df_proveedores.iterrows():
-    ax.bar(row['Medios proveedores de noticias'], row['Ahorro de costes por publicidad'], 
+    ax.bar(row['Medios proveedores de noticias'], row['Tráfico orgánico para el medio'], 
            bottom=row['Coste por sus fuentes'], 
            color=sm.to_rgba(row['CTR']), 
-           edgecolor='black', label='Ahorro de costes por publicidad' if idx == 0 else "")
+           edgecolor='black', label='Tráfico orgánico para el medio' if idx == 0 else "")
 
 # Añadir la barra de colores para el CTR
 cbar = plt.colorbar(sm, ax=ax)
