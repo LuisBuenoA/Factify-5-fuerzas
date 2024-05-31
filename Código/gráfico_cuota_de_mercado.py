@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Cargar los datos del archivo Excel
-file_path = 'datos_cuota_de_mercado.xlsx'
+file_path = 'Data\datos_cuota_de_mercado.xlsx'
 data_suscripciones = pd.read_excel(file_path, sheet_name='Datos suscripciones')
 
 # Eliminar filas con valores nulos en la columna 'Número de suscriptores 2024' y 'Precio de la suscripción 2024'

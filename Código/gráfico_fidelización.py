@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Cargar los datos del archivo Excel
-file_path = 'encuesta_realizada_online_Factify.xlsx'
+file_path = 'Data\encuesta_realizada_online_Factify.xlsx'
 df_encuesta = pd.read_excel(file_path)
 
 # Asumir que la columna con las respuestas se llama 'Respuesta'

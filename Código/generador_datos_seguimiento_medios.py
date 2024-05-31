@@ -16,5 +16,5 @@ df_proveedores = pd.DataFrame(data_proveedores)
 df_proveedores['Coste total real'] = df_proveedores['Coste por sus fuentes'] + df_proveedores['Tráfico orgánico para el medio']
 
 # Exportar el DataFrame a un archivo Excel
-# output_file_path = 'datos_seguimiento_medios.xlsx'
+# output_file_path = 'Data\datos_seguimiento_medios.xlsx'
 # df_proveedores.to_excel(output_file_path, index=False)

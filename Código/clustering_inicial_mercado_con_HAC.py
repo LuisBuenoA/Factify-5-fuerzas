@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.cluster.hierarchy import dendrogram, linkage
 
 # Cargar los datos del archivo Excel
-file_path = 'datos_cuota_de_mercado.xlsx'
+file_path = 'Data\datos_cuota_de_mercado.xlsx'
 data_suscripciones = pd.read_excel(file_path, sheet_name='Datos suscripciones')
 
 # Seleccionar las columnas relevantes y eliminar filas con valores faltantes

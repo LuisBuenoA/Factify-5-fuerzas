@@ -6,7 +6,7 @@ from sklearn.metrics import silhouette_score
 
 # Cargar los datos de crecimiento del PIB
 # Leer los datos del archivo Excel
-file_path = 'datos_crecimiento.xlsx'
+file_path = 'Data\datos_crecimiento.xlsx'
 data_crecimiento = pd.read_excel(file_path, sheet_name='Data')
 
 # Calcular la diferencia entre el crecimiento del mercado de noticias digitales y el crecimiento del PIB
@@ -22,7 +22,7 @@ color_flecha_crecimiento = 'darkgreen' if variacion_crecimiento > 0 else 'darkre
 ### Paso 2: Cargar y Procesar los Datos de Seguimiento de los Medios
 
 # Cargar los datos de seguimiento de medios
-file_path_seguimiento_medios = 'datos_seguimiento_medios.xlsx'
+file_path_seguimiento_medios = 'Data\datos_seguimiento_medios.xlsx'
 data_seguimiento_medios = pd.read_excel(file_path_seguimiento_medios)
 
 # Calcular los totales
@@ -36,7 +36,7 @@ total_coste_formatted = f"{total_coste:,.2f}"
 ### Paso 3: Cargar y Procesar los Datos de Acceso a Noticias
 
 # Cargar los datos de acceso a noticias
-file_path_acceso = 'data-ExyBd.csv'
+file_path_acceso = 'Data\data-ExyBd.csv'
 data_acceso = pd.read_csv(file_path_acceso)
 
 # Calcular la variación del acceso
@@ -55,7 +55,7 @@ color_flecha_acceso_redes = 'darkgreen' if variacion_acceso_redes > 0 else 'dark
 ### Paso 4: Cargar y Procesar los Datos del NPS
 
 # Cargar los datos
-file_path = 'encuesta_realizada_online_Factify.xlsx'
+file_path = 'Data\encuesta_realizada_online_Factify.xlsx'
 df_encuesta = pd.read_excel(file_path)
 
 # Asumir que la columna con las respuestas se llama 'Respuesta'
@@ -95,7 +95,7 @@ flecha_nps = '↑' if variacion_nps > 0 else '↓' if variacion_nps < 0 else '�
 color_flecha_nps = 'darkgreen' if variacion_nps > 0 else 'darkred' if variacion_nps < 0 else 'black'
 
 # Paso 5: Cargar los resultados del clustering
-file_path_clustering = 'resultados_clustering.xlsx'
+file_path_clustering = 'Data/resultados_clustering.xlsx'
 data_clustering = pd.read_excel(file_path_clustering)
 
 # Calcular el número de grupos y la puntuación de silhouette

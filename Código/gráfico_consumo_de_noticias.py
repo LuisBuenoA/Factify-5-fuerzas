@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2023/dnr-executive-summary
 
 # Cargar los datos del archivo CSV
-file_path = 'data-ExyBd.csv'
+file_path = 'Data\data-ExyBd.csv'
 df_sustitutos = pd.read_csv(file_path)
 
 # Crear la gráfica con dos líneas

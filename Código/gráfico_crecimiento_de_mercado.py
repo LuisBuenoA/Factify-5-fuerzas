@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Leer los datos del archivo Excel
-file_path = 'datos_crecimiento.xlsx'
+file_path = 'Data\datos_crecimiento.xlsx'
 df = pd.read_excel(file_path, sheet_name='Data')
 
 # Calcular la diferencia entre el crecimiento del mercado de noticias digitales y el crecimiento del PIB

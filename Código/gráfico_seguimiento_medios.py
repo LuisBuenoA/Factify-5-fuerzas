@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 
 # Cargar los datos del archivo Excel
-file_path = 'datos_seguimiento_medios.xlsx'
+file_path = 'Data\datos_seguimiento_medios.xlsx'
 df_proveedores = pd.read_excel(file_path)
 
 # Normalizar el CTR para usarlo en la escala de colores
