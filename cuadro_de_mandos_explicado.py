@@ -115,36 +115,50 @@ def plot_kpis():
     
     # Configuración de las posiciones de los recuadros
     x_positions = [0.05, 0.35, 0.65]
-    y_positions = [0.85, 0.65, 0.75, 0.25, 0.05]
+    y_positions = [0.85, 0.65, 0.75, 0.45]
     heights = 0.15
 
     # Crecimiento del mercado
     ax.add_patch(patches.Rectangle((x_positions[0], y_positions[2]), 0.3, heights, fill=False, edgecolor='black', lw=1))
-    ax.text(x_positions[0] + 0.15, y_positions[2] + heights - 0.03, 'Crecimiento del mercado', ha='center', va='center', fontsize=16, fontweight='bold')
+    ax.text(x_positions[0] + 0.15, y_positions[2] + heights - 0.03, 'Crecimiento del mercado*', ha='center', va='center', fontsize=16, fontweight='bold')
     ax.text(x_positions[0] + 0.15, y_positions[2] + heights / 3, f'{crecimiento_actual:.2f}% {flecha_crecimiento}', ha='center', va='center', fontsize=14, fontweight='bold', color=color_flecha_crecimiento)
 
     # Medios proveedores
     ax.add_patch(patches.Rectangle((x_positions[1], y_positions[0]), 0.3, heights, fill=False, edgecolor='black', lw=1))
-    ax.text(x_positions[1] + 0.15, y_positions[0] + heights - 0.03, 'Medios proveedores', ha='center', va='center', fontsize=16, fontweight='bold')
+    ax.text(x_positions[1] + 0.15, y_positions[0] + heights - 0.03, 'Medios proveedores**', ha='center', va='center', fontsize=16, fontweight='bold')
     ax.text(x_positions[1] + 0.15, y_positions[0] + heights / 3, f'Total Tráfico Generado: €{total_trafico_formatted}', ha='center', fontsize=14)
     ax.text(x_positions[1] + 0.15, y_positions[0] + heights / 3 - 0.03, f'Total Coste: €{total_coste_formatted}', ha='center', fontsize=14)
 
     # Acceso a noticias
     ax.add_patch(patches.Rectangle((x_positions[1], y_positions[1]), 0.3, heights, fill=False, edgecolor='black', lw=1))
-    ax.text(x_positions[1] + 0.15, y_positions[1] + heights - 0.03, 'Acceso a noticias', ha='center', va='center', fontsize=16, fontweight='bold')
+    ax.text(x_positions[1] + 0.15, y_positions[1] + heights - 0.03, 'Acceso a noticias***', ha='center', va='center', fontsize=16, fontweight='bold')
     ax.text(x_positions[1] + 0.15, y_positions[1] + heights / 3, f'Directo: {acceso_actual_directo:.2f}% {flecha_acceso_directo}', ha='center', fontsize=14, color=color_flecha_acceso_directo)
     ax.text(x_positions[1] + 0.15, y_positions[1] + heights / 3 - 0.03, f'Redes sociales: {acceso_actual_redes:.2f}% {flecha_acceso_redes}', ha='center', fontsize=14, color=color_flecha_acceso_redes)
 
     # NPS
     ax.add_patch(patches.Rectangle((x_positions[2], y_positions[0]), 0.3, heights, fill=False, edgecolor='black', lw=1))
-    ax.text(x_positions[2] + 0.15, y_positions[0] + heights - 0.03, 'Lealtad de los clientes', ha='center', va='center', fontsize=16, fontweight='bold')
+    ax.text(x_positions[2] + 0.15, y_positions[0] + heights - 0.03, 'Lealtad de los clientes****', ha='center', va='center', fontsize=16, fontweight='bold')
     ax.text(x_positions[2] + 0.15, y_positions[0] + heights / 3, f'NPS Actual: {nps_score:.2f} {flecha_nps}', ha='center', fontsize=14, fontweight='bold', color=color_flecha_nps)
 
     # Número de Grupos y Puntuación de Silhouette
     ax.add_patch(patches.Rectangle((x_positions[2], y_positions[1]), 0.3, heights, fill=False, edgecolor='black', lw=1))
-    ax.text(x_positions[2] + 0.15, y_positions[1] + heights - 0.03, 'Agrupación del mercado', ha='center', va='center', fontsize=16, fontweight='bold')
+    ax.text(x_positions[2] + 0.15, y_positions[1] + heights - 0.03, 'Agrupación del mercado*****', ha='center', va='center', fontsize=16, fontweight='bold')
     ax.text(x_positions[2] + 0.15, y_positions[1] + heights / 3, f'Número de Grupos: {num_grupos}', ha='center', fontsize=14, fontweight='bold')
     ax.text(x_positions[2] + 0.15, y_positions[1] + heights / 3 - 0.03, f'Silhouette: {puntuacion_silhouette:.2f}', ha='center', fontsize=14, fontweight='bold')
+
+    # Leyendas
+    leyendas = [
+        "* Diferencia del mercado de noticias digital y el PIB español",
+        "** Suma del coste de proveernos de noticias con medios, teniendo en cuenta el beneficio que generamos a los periódicos con el tráfico orgánico que reciben",
+        "*** No tenemos en cuenta la utilización de buscadores, agregadores de noticias u otros accesos, por eso no suma un 100%",
+        "**** Encuesta interna de los clientes que recomendarían el producto",
+        "***** Número de agrupaciones de competidores hecha con K-means"
+    ]
+    
+    leyendas_y = y_positions[-1] - 0.1  # Posición inicial de las leyendas
+    for leyenda in leyendas:
+        ax.text(0.05, leyendas_y, leyenda, fontsize=12, va='center')
+        leyendas_y -= 0.05
 
     plt.show()
 
